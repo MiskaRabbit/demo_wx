@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xujin.demo_wx.dao.AreaDao">
+    <!--mybatis里可自己判断返回结果为一个对象还是一个对象的集合-->
+    <select id="queryArea" resultType="com.xujin.demo_wx.entity.Area">
+        SELECT ID,AREA_NAME,PRIORITY,CREATE_TIME,LAST_EDIT_TIME FROM T_WX_AREA WHERE ID=#{areaId}
+    </select>
+
+    <select id="queryAreaById" resultType="com.xujin.demo_wx.entity.Area">
+        SELECT ID,AREA_NAME,PRIORITY,CREATE_TIME,LAST_EDIT_TIME FROM T_WX_AREA ORDER BY PRIORITY DESC
+    </select>
+</mapper>
